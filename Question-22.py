@@ -1,15 +1,17 @@
+
 class Solution:
-    def generate(self,n):
+    def generatePara(self,n):
         result=[]
-        stack=[("",0,0)]
-        while stack:
-            current,open,close=stack.pop()
+        def generate(current,open,close):
             if len(current)==2*n:
                 result.append(current)
+                return
             if close < open:
-                stack.append((current+")",open,close+1))
+                generate(current+")",open,close+1)
             if open < n:
-                stack.append((current+"(",open+1,close))
+                generate(current+"(",open+1,close)
+        generate("",0,0)
         return result
 obj=Solution()
-print(obj.generate(3))
+result=obj.generatePara(3)
+print(result)
