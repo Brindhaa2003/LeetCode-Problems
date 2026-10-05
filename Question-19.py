@@ -1,9 +1,7 @@
-Class LinkedList:
+Class ListNode:
     def __init__(self,val=0,next=None):
         self.val=val
         self.next=next
-        
-head=ListNod
         
 Class Solution:
     def generate(self,head,n):
@@ -16,12 +14,12 @@ Class Solution:
             fast=fast.next
             slow=slow.next
         slow.next=slow.next.next
-        return dummy.next
-head=LinkedList(1)
-head.next=LinkedList(2)
-head.next.next=LinkedList(3)
-head.next.next.next=LinkedList(4)
-head.next.next.next.next=LinkedList(5)
+        print(dummy.next)
+head=ListNode(1)
+head.next=ListNode(2)
+head.next.next=ListNode(3)
+head.next.next.next=ListNode(4)
+head.next.next.next.next=ListNode(5)
 
 obj=Solution()
-print(obj.generate(head,2))
+head=obj.generate(head,2)
